@@ -10,6 +10,8 @@ Following are the responsibility of the system that needs to be built.
 - Find the most played Game. 
 - Find the average points for a given game across all gamers. 
 
+## Getting Started
+
 You may run this project by building and running this project in a docker container.
 The docker container will conveniently serve up the API documentation from the root uri.
 
