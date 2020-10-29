@@ -1,0 +1,95 @@
+:toc: left
+
+# GameHub
+
+This API serves game information from the `/games` endpoint.
+
+## Game
+(noun) a form of play or sport, especially a competitive one played according to rules and decided by skill, strength, or luck.
+
+operation::getOneGame[snippets='response-fields']
+
+### To retrieve a list of all games
+
+   [GET] /games
+
+#### Parameters:
+
+operation::getGames[snippets='curl-request,http-response,response-fields']
+
+### To retrieve a single game
+    [GET] /games/{id}
+
+operation::getOneGame[snippets='curl-request,http-response,response-fields']
+
+### To create a game
+    [POST] /games
+
+operation::createGame[snippts='curl-request,http-response']
+
+
+### To update a game
+    [POST] /games/{id}
+
+operation::updateGame[snippts='curl-request,http-response']
+
+## Gamers
+
+operation::getOneGamer[snippets='response-fields']
+
+
+### To retrieve a list of all gamers
+
+   [GET] /gamers
+
+#### Parameters:
+
+operation::getGamers[snippets='curl-request,http-response,response-fields']
+
+### To retrieve a single gamer
+    [GET] /gamers/{id}
+
+operation::getOneGamer[snippets='curl-request,http-response,response-fields']
+
+### To create a gamer
+    [POST] /gamers
+
+operation::createGamer[snippts='curl-request,http-response']
+
+
+### To update a game
+    [POST] /gamers/{id}
+
+operation::updateGame[snippts='curl-request,http-response']
+
+
+## Scores
+
+operation::createScore[snippets='response-fields']
+
+### To retrieve all scores of a gamer on a game
+
+   [GET] /gamers/{gamerId}/games/{gameId}
+
+operation::getScores[snippets='curl-request,http-response,response-fields']
+
+### To add a score
+    [GET] /gamers/{gamerId}/games/{gameId}
+
+operation::createScore[snippets='curl-request,http-response,response-fields']
+
+### Finding the most popular game
+    [POST] /popular
+
+operation::getMostPopular[snippts='curl-request,http-response']
+
+
+### Display score of gamers of game (sorted descending) - See here for finding highest score
+    [POST] /games/{gamerId}/gamers
+
+operation::getGamerScoresForGame[snippts='curl-request,http-response']
+
+### Getting average score of a game
+    [POST] /games/{gamerId}/metrics
+
+operation::getGameMetrics[snippts='curl-request,http-response']
