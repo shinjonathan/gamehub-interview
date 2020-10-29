@@ -51,7 +51,7 @@ public class GameHandler {
                     .flatMap(gameService::createGame)
                     .flatMap(r ->
                             ServerResponse
-                                    .created(UriComponentsBuilder.fromPath("/games/id}").build(r.getId()))
+                                    .created(UriComponentsBuilder.fromPath("/games/{id}").build(r.getId()))
                                     .contentType(MediaType.APPLICATION_JSON)
                                     .body(Mono.just(r), Game.class));
         }
